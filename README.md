@@ -1,4 +1,5 @@
 # Shoppings
+[![Build Status](https://www.travis-ci.com/gissandrogama/-shopping.svg?branch=main)](https://www.travis-ci.com/gissandrogama/-shopping)
 
 **TODO: Add description**
 
