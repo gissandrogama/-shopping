@@ -21,7 +21,7 @@ defmodule ShoppingsTest do
 
       result = Shoppings.buy(buys, emails)
 
-      assert Enum.map(result, &(&1.value)) |> Enum.sum == 51.0
+      assert Enum.map(result, & &1.value) |> Enum.sum() == 51.0
     end
   end
 end
