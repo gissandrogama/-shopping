@@ -51,6 +51,7 @@ $ iex -S mix
 in item values ​​was from the shopping list. They are whole numbers, to avoid arithmetic complexity with floating point or float. Thus, to represent R $ 1.99, 199 or 1_99 is used, for R $ 50.00 -> 50_00 or 5000.
 
 **5.** generate documentation:
+In the documentation has explaining how to use the application.
 
 ```sh
 $ mix docs
