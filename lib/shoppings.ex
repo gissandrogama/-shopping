@@ -1,6 +1,6 @@
 defmodule Shoppings do
   @moduledoc """
-  Documentation for `Shoppings`.
+  module has function that receives lists
   """
 
   @doc """
