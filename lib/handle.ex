@@ -17,14 +17,12 @@ defmodule Handle do
   @spec split(number, number, list()) :: [map()]
   def split(value, quantity, emails) do
     cloven = value / quantity
-    IO.inspect(cloven)
 
     case rem(value, quantity) do
       0 ->
-        value = cloven / 100
-        IO.inspect(value)
+        value = cloven
 
-        Enum.map(emails, fn email -> %{email: email, value: "R$ #{value}"} end)
+        Enum.map(emails, fn email -> %{email: email, value: value} end) |> print()
 
       _ ->
         value = process(cloven) |> String.to_integer()
