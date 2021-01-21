@@ -3,16 +3,7 @@ defmodule Shoppings do
   Documentation for `Shoppings`.
   """
 
-  @doc """
-  Hello world.
+  def buy(buys, emails) do
 
-  ## Examples
-
-      iex> Shoppings.hello()
-      :world
-
-  """
-  def hello do
-    :world
   end
 end
