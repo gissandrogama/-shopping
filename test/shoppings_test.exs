@@ -6,7 +6,11 @@ defmodule ShoppingsTest do
     test "taking values ​​from the macros defined in the Shopping module" do
       result = Shoppings.buy()
 
-      assert 1.0 == Enum.map(result, & &1.value) |> Enum.sum()
+      assert result == [
+               %{email: "teste1@gmail.com", value: "R$ 0.33"},
+               %{email: "teste2@gmail.com", value: "R$ 0.33"},
+               %{email: "teste3@gmail.com", value: "R$ 0.34"}
+             ]
     end
   end
 
@@ -21,7 +25,11 @@ defmodule ShoppingsTest do
 
       result = Shoppings.buy(buys, emails)
 
-      assert Enum.map(result, & &1.value) |> Enum.sum() == 51.0
+      assert result == [
+               %{email: "teste1@gmail.com", value: "R$ 17.0"},
+               %{email: "teste2@gmail.com", value: "R$ 17.0"},
+               %{email: "teste3@gmail.com", value: "R$ 17.0"}
+             ]
     end
   end
 end
