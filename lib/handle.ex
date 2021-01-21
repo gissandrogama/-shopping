@@ -17,7 +17,6 @@ defmodule Handle do
   @spec split(number, number, list()) :: [map()]
   def split(value, quantity, emails) do
     cloven = value / quantity
-    IO.inspect(cloven)
 
     case rem(value, quantity) do
       0 ->
@@ -27,8 +26,6 @@ defmodule Handle do
 
       _ ->
         value = process(cloven)
-
-        IO.inspect(value)
 
         list = Enum.map(emails, fn email -> %{email: email, value: value} end)
 
