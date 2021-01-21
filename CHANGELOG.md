@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+- fix bug in tithing
+
 
 ## [0.0.1] - 2021-01-18
 ### Added
@@ -17,3 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - coverralls configuration
 
 - creating license files
+
+- creation of the buy function
+
+- creation of the handle module and functions: calculate, split and process
