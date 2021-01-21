@@ -17,15 +17,17 @@ defmodule Handle do
   @spec split(number, number, list()) :: [map()]
   def split(value, quantity, emails) do
     cloven = value / quantity
+    IO.inspect(cloven)
 
     case rem(value, quantity) do
       0 ->
         value = cloven / 100
+        IO.inspect(value)
 
-        Enum.map(emails, fn email -> %{email: email, value: value} end)
+        Enum.map(emails, fn email -> %{email: email, value: "R$ #{value}"} end)
 
       _ ->
-        value = process(cloven)
+        value = process(cloven) |> String.to_integer()
 
         list = Enum.map(emails, fn email -> %{email: email, value: value} end)
 
@@ -33,16 +35,24 @@ defmodule Handle do
 
         list
         |> List.update_at(key, fn pessoas ->
-          %{email: pessoas.email, value: pessoas.value + 0.01}
+          %{email: pessoas.email, value: pessoas.value + 1}
         end)
+        |> print()
     end
   end
 
-  @spec process(float) :: float()
+  @spec process(float) :: String.t
   def process(cloven) when is_float(cloven) do
     cloven = cloven / 100
 
     cloven
     |> Float.floor(2)
+    |> Float.to_string()
+    |> String.split(".")
+    |> Enum.join()
+  end
+
+  def print(list) do
+    Enum.map(list, fn list -> %{email: list.email, value: "R$ #{list.value / 100}"} end)
   end
 end
