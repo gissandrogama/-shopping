@@ -1,11 +1,28 @@
 defmodule Shoppings.MixProject do
   use Mix.Project
 
+  @github_url "https://github.com/gissandrogama/-shopping.git"
+
   def project do
     [
       app: :shoppings,
       version: "0.1.0",
       elixir: "~> 1.11",
+      description: "Stone's technical deficit for the Elixir Training Program",
+      source_url: @github_url,
+      homepage_url: @github_url,
+      files: ~w(mix.exs lib LICENSE.md README.md CHANGELOG.md),
+      package: [
+        maintainers: ["Gissandro Gama"],
+        licenses: ["MIT"],
+        links: %{
+          "Github" => @github_url
+        }
+      ],
+      docs: [
+        main: "readme",
+        extras: ["README.md", "CHANGELOG.md"]
+      ],
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
