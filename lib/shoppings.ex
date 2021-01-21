@@ -3,16 +3,13 @@ defmodule Shoppings do
   Documentation for `Shoppings`.
   """
 
-  @doc """
-  Hello world.
+  @buys [%{name: "baton garoto", amount: 1, price: 100, type: "unity"}]
+  @emails ["teste1@gmail.com", "teste2@gmail.com", "teste3@gmail.com"]
+  def buy do
+    Handle.calculate(@buys, @emails)
+  end
 
-  ## Examples
-
-      iex> Shoppings.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def buy(buys, emails) do
+    Handle.calculate(buys, emails)
   end
 end
